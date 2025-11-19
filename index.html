@@ -1,11 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รับสมัครนักเรียนโควต้า ปีการศึกษา 2569</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Reset & Global --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #f4f7f6; /* สีพื้นหลังเทาอ่อน */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff; /* พื้นหลังฟอร์มสีขาว */
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* เพิ่มเงาให้ดูมีมิติ */
+            overflow: hidden; /* สำหรับขอบมน */
+        }
+
+        /* --- Header --- */
+        .form-header {
+            background-color: #0056b3; /* สีหลักของสถาบัน (ตัวอย่างสีน้ำเงิน) */
+            color: #ffffff;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .form-header p {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        /* --- Form Body --- */
+        .form-body {
+            padding: 40px;
+        }
+
+        /* --- Form Sections --- */
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 1.5em;
+            font-weight: 500;
+            color: #0056b3;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Form Groups (Label + Input) --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        /* จัดเรียง 2 ช่องข้างกัน (สำหรับชื่อ-นามสกุล) */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* แบ่งครึ่ง */
+            gap: 20px; /* ระยะห่างระหว่างช่อง */
+        }
+
+        /* --- Labels --- */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* --- Inputs, Selects, Textareas --- */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* เอฟเฟกต์ตอนคลิก (Focus) */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0056b3; /* สีขอบเมื่อ focus */
+            box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* เงาจางๆ */
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical; /* ให้ย่อขยายได้แค่แนวตั้ง */
+        }
+
+        /* --- Submit Button --- */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff; /* สีปุ่มหลัก */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 500;
+            font-family: 'Kanit', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3; /* สีเข้มขึ้นเมื่อ hover */
+            transform: translateY(-2px); /* ขยับขึ้นเล็กน้อย */
+        }
+        
+        /* --- Responsive (สำหรับมือถือ) --- */
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+                gap: 0; /* เอาช่องว่างออก (เพราะ .form-group มี margin-bottom อยู่แล้ว) */
+            }
+            
+            .form-body {
+                padding: 20px;
+            }
+            
+            .form-header {
+                padding: 20px 25px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    abdsadasd
+
+    <div class="container">
+        <header class="form-header">
+            <h1>ระบบรับสมัครนักเรียนโควต้า</h1>
+            <p>ปีการศึกษา 2569</p>
+        </header>
+
+        <form action="#" method="POST" class="form-body">
+
+            <section class="form-section">
+                <h2>ส่วนที่ 1: ข้อมูลส่วนตัว</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">ชื่อ</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="กรุณาระบุชื่อจริง" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">นามสกุล</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="กรุณาระบุนามสกุล" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="id-card">เลขประจำตัวประชาชน 13 หลัก</label>
+                    <input type="text" id="id-card" name="id_card" pattern="[0-9]{13}" placeholder="xxxxxxxxxxxxx" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="birth-date">วัน/เดือน/ปีเกิด</label>
+                        <input type="date" id="birth-date" name="birth_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">เพศ</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">-- เลือกเพศ --</option>
+                            <option value="male">ชาย</option>
+                            <option value="female">หญิง</option>
+                            <option value="other">อื่น ๆ</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>ส่วนที่ 2: ข้อมูลการติดต่อ</h2>
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์มือถือ</label>
+                    <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">ที่อยู่ปัจจุบัน (เพื่อจัดส่งเอกสาร)</label>
+                    <textarea id="address" name="address" placeholder="บ้านเลขที่, หมู่, ตำบล, อำเภอ, จังหวัด, รหัสไปรษณีย์" required></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>ส่วนที่ 3: ข้อมูลการสมัคร</h2>
+                <div class="form-group">
+                    <label for="school">โรงเรียนเดิม</label>
+                    <input type="text" id="school" name="school" placeholder="ชื่อโรงเรียน" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gpax">เกรดเฉลี่ยสะสม (GPAX)</label>
+                    <input type="number" id="gpax" name="gpax" step="0.01" min="0" max="4" placeholder="เช่น 3.75" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="quota-type">ประเภทโควต้าที่สมัคร</label>
+                    <select id="quota-type" name="quota_type" required>
+                        <option value="">-- เลือกประเภทโควต้า --</option>
+                        <option value="academic">โควต้าเรียนดี</option>
+                        <option value="sport">โควต้านักกีฬา</option>
+                        <option value="art">โควต้าความสามารถพิเศษ (ศิลปะ/ดนตรี)</option>
+                        <option value="rural">โควต้าพื้นที่</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="faculty">คณะ/สาขา ที่ต้องการสมัคร (อันดับ 1)</label>
+                    <select id="faculty" name="faculty_1" required>
+                        <option value="">-- เลือกคณะ/สาขา --</option>
+                        <option value="engineering">คณะวิศวกรรมศาสตร์</option>
+                        <option value="science">คณะวิทยาศาสตร์</option>
+                        <option value="medicine">คณะแพทยศาสตร์</option>
+                        <option value="humanities">คณะมนุษยศาสตร์</option>
+                        <option value="business">คณะบริหารธุรกิจ</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="achievements">ผลงาน/ความสามารถพิเศษ (ถ้ามี)</label>
+                    <textarea id="achievements" name="achievements" placeholder="ระบุผลงานเด่น รางวัลที่เคยได้รับ หรือความสามารถพิเศษที่เกี่ยวข้องกับโควต้า..."></textarea>
+                </div>
+            </section>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">ส่งใบสมัคร</button>
+            </div>
+
+        </form>
+    </div>
+
 </body>
 </html>
