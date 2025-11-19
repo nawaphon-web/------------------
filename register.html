@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประกาศรับสมัครนักเรียนโควต้า ปีการศึกษา 2569</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* --- CSS Reset & Global --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #f4f7f6; /* สีพื้นหลังเทาอ่อน */
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* --- Main Container (กล่องเนื้อหาหลัก) --- */
+        .container {
+            max-width: 900px; /* กว้างกว่าฟอร์มเล็กน้อยเพื่อรองรับเนื้อหา */
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* --- Page Header (ส่วนหัวของประกาศ) --- */
+        .page-header {
+            background-color: #0056b3; /* สีน้ำเงินหลัก (สีเดียวกับฟอร์ม) */
+            color: #ffffff;
+            padding: 40px 50px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5em; /* ขนาดใหญ่พิเศษ */
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-header h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+        
+        /* --- Hero Section (ส่วนเกริ่นนำ) --- */
+        .hero-section {
+            padding: 40px 50px;
+            text-align: center;
+            background-color: #fdfdfd;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hero-section .icon {
+            font-size: 3em;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Content Section (ส่วนเนื้อหา) --- */
+        .content-section {
+            padding: 40px 50px;
+        }
+
+        /* --- หัวข้อ H2, H3 --- */
+        .content-section h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #0056b3;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 10px;
+            display: inline-block; /* ทำให้เส้นขีดล่างพอดีกับข้อความ */
+        }
+        
+        .content-section h3 {
+            font-size: 1.4em;
+            font-weight: 500;
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Lists (รายการคุณสมบัติ, คณะ) --- */
+        .styled-list {
+            list-style: none; /* เอา bullet เริ่มต้นออก */
+            padding-left: 0;
+        }
+
+        .styled-list li {
+            position: relative;
+            padding-left: 35px; /* เว้นที่สำหรับไอคอน */
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        /* ไอคอน 'ติ๊กถูก' หน้าข้อความ */
+        .styled-list li::before {
+            content: '\f058'; /* โค้ดไอคอน 'check-circle' จาก Font Awesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #28a745; /* สีเขียว */
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2em;
+        }
+
+        /* --- Timeline Section (กำหนดการ) --- */
+        .timeline-section {
+            background-color: #f9f9f9; /* สีพื้นหลังส่วนกำหนดการ */
+            padding: 40px 50px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* เส้นแกนกลางของ Timeline */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #0056b3;
+            opacity: 0.3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        /* Container ของแต่ละ Event */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* วงกลมบนแกนกลาง */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 5px solid #0056b3; /* สีเดียวกับแกน */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* กล่องด้านซ้าย */
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        /* กล่องด้านขวา */
+        .right {
+            left: 50%;
+        }
+
+        /* ปรับลูกศรและวงกลมสำหรับแต่ละฝั่ง */
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+
+        /* กล่องเนื้อหาของ Event */
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content .date {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #0056b3;
+        }
+
+        /* --- Call to Action (ปุ่มสมัคร) --- */
+        .cta-section {
+            padding: 50px 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffc107; /* สีเหลืองเด่น */
+            color: #333; /* สีตัวอักษรบนปุ่ม */
+            padding: 15px 40px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px; /* ปุ่มทรงแคปซูล */
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: #ffd040;
+            transform: translateY(-5px); /* ขยับขึ้นเมื่อ hover */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* --- Contact (ส่วนติดต่อ) --- */
+        .contact-section {
+             padding: 40px 50px;
+             text-align: center;
+             font-size: 1.1em;
+        }
+        
+        /* --- Footer --- */
+        .page-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        
+        /* --- Responsive (สำหรับมือถือ) --- */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2em; }
+            .page-header h2 { font-size: 1.2em; }
+            
+            .content-section, .timeline-section, .cta-section, .hero-section {
+                padding: 30px 25px;
+            }
+
+            /* ปรับ Timeline ให้อยู่ฝั่งเดียว */
+            .timeline::after {
+                left: 15px; /* ย้ายแกนมาด้านซ้าย */
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px; /* เว้นที่สำหรับแกนและจุด */
+                padding-right: 0px;
+            }
+            
+            .left, .right {
+                left: 0%; /* บังคับให้อยู่ฝั่งเดียว */
+                text-align: left; /* จัดชิดซ้าย */
+            }
+            
+            .left::after, .right::after {
+                left: 6px; /* ย้ายจุดมาที่แกน */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>ประกาศรับสมัครนักเรียนโควต้า</h1>
+        <h2>ประจำปีการศึกษา 2569</h2>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero-section">
+            <div class="icon"><i class="fas fa-bullhorn"></i></div>
+            <p>
+                [ชื่อสถาบันการศึกษาของคุณ] เปิดรับสมัครนักเรียน/นักศึกษาใหม่ ประเภทโควต้า
+                สำหรับผู้มีความสามารถพิเศษ และผู้มีผลการเรียนดี เพื่อเข้าศึกษาต่อในระดับ [ระดับชั้น/ปริญญา]
+                ปีการศึกษา 2569
+            </p>
+        </section>
+        
+        <section class="content-section">
+            
+            <h2><i class="fas fa-graduation-cap"></i> คณะ/สาขาที่เปิดรับ</h2>
+            <ul class="styled-list">
+                <li>คณะวิศวกรรมศาสตร์ (ทุกสาขา)</li>
+                <li>คณะวิทยาศาสตร์ (สาขาคณิตศาสตร์, ฟิสิกส์, เคมี, ชีววิทยา)</li>
+                <li>คณะบริหารธุรกิจ (สาขาการตลาด, การบัญชี)</li>
+                <li>คณะมนุษยศาสตร์ (สาขาภาษาอังกฤษ, ภาษาไทย)</li>
+                <li>คณะแพทยศาสตร์ (โครงการ... *ถ้ามี)</li>
+            </ul>
+
+            <h2><i class="fas fa-user-check"></i> คุณสมบัติผู้สมัคร</h2>
+            <ul class="styled-list">
+                <li>กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6 หรือเทียบเท่า</li>
+                <li>มีผลการเรียนเฉลี่ยสะสม (GPAX) 5 ภาคเรียน ไม่ต่ำกว่า 3.00 (สำหรับโควต้าเรียนดี)</li>
+                <li>มีผลงาน/รางวัลระดับจังหวัดขึ้นไป (สำหรับโควต้าความสามารถพิเศษ)</li>
+                <li>มีคุณสมบัติเฉพาะตามที่แต่ละคณะ/สาขากำหนด</li>
+            </ul>
+            
+            <h2><i class="fas fa-file-alt"></i> เอกสารประกอบการสมัคร</h2>
+             <ul class="styled-list">
+                <li>ไฟล์ใบแสดงผลการเรียน (ปพ.1) 5 ภาคเรียน</li>
+                <li>ไฟล์สำเนาบัตรประจำตัวประชาชน</li>
+                <li>ไฟล์ Portfolio (แฟ้มสะสมผลงาน) ไม่เกิน 10 หน้า (สำหรับโควต้าความสามารถพิเศษ)</li>
+            </ul>
+        </section>
+
+        <section class="timeline-section">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 40px;"><i class="fas fa-calendar-alt"></i> กำหนดการสำคัญ</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="date">1 - 30 ธันวาคม 2568</div>
+                        <p>เปิดรับสมัครออนไลน์ (ผ่านทางหน้าเว็บไซต์)</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="date">5 มกราคม 2569</div>
+                        <p>ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="date">15 มกราคม 2569</div>
+                        <p>สอบสัมภาษณ์ (รูปแบบออนไลน์ หรือ ณ สถานที่)</p>
+                    </div>
+                </div>
+                 <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="date">20 มกราคม 2569</div>
+                        <p>ประกาศรายชื่อผู้ผ่านการคัดเลือก</p>
+                    </div>
+                </div>
+                 <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="date">25 - 30 มกราคม 2569</div>
+                        <p>ยืนยันสิทธิ์ และรายงานตัว</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2>อย่ารอช้า! โอกาสของคุณมาถึงแล้ว</h2>
+            <a href="index.html" class="cta-button">
+                <i class="fas fa-edit"></i> สมัครเลย
+            </a>
+            </section>
+        
+        <section class="contact-section">
+            <h3>สอบถามข้อมูลเพิ่มเติม</h3>
+            <p>ฝ่ายรับเข้านักศึกษา [ชื่อสถาบัน]</p>
+            <p>โทร. 02-XXX-XXXX ต่อ 123 | อีเมล: admission@school.ac.th</p>
+        </section>
+
+    </div>
+
+    <footer class="page-footer">
+        © 2569 [ชื่อสถาบันการศึกษาของคุณ] All rights reserved.
+    </footer>
+
+</body>
+</html>
